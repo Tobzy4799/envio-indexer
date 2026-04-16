@@ -3,11 +3,11 @@ name: envio-token-indexer
 networks:
 - id: 5042002
   rpc: https://5042002.rpc.thirdweb.com
-  start_block: 37337128
+  start_block: 37398471
   contracts:
   - name: Factory
     address:
-    - 0x482FC389Fc16ecFF055c479191Eb771d07D77e2c
+    - 0xAa1D72Afa4a90949246Dc239d8B1E00269D503Bb
     handler: src/EventHandlers.ts
     events:
     - event: TokenCreated(address indexed tokenAddress, string name, string symbol, string ipfsCID)
