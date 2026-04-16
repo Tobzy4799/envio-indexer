@@ -1,0 +1,18 @@
+type Factory_TokenCreated {
+  id: ID!
+  tokenAddress: String!
+  name: String!
+  symbol: String!
+  ipfsCID: String!
+}
+
+type Factory_Trade {
+  id: ID!
+  tokenAddress: String!
+  user: String!
+  tokenAmount: BigInt!
+  usdcAmount: BigInt!
+  isBuy: Boolean!
+  timestamp: BigInt!
+}
+
