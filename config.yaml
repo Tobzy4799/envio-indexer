@@ -3,7 +3,7 @@ name: envio-token-indexer
 networks:
 - id: 5042002
   rpc: https://5042002.rpc.thirdweb.com
-  start_block: 37519350
+  start_block: 37398471
   contracts:
   - name: Factory
     address:

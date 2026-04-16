@@ -15,8 +15,11 @@ Factory.TokenCreated.handler(async ({ event, context }) => {
     name: event.params.name,
     symbol: event.params.symbol,
     ipfsCID: event.params.ipfsCID,
-    creator: event.transaction.from,
-    currentSupply: 0n, // Starts at 0, updated by the first Trade event
+    // CHANGE THIS LINE: 
+    // If 'event.transaction.from' failed, use 'event.srcAddress' 
+    // or 'event.params.user' (if your event has it)
+    creator: event.srcAddress, 
+    currentSupply: 0n,
     reserveUSDC: 0n,
     tradeCount: 0,
   };
@@ -35,7 +38,6 @@ Factory.Trade.handler(async ({ event, context }) => {
   };
   context.Factory_Trade.set(tradeEntity);
 
-  // CRITICAL: This is the logic that moves the progress bar on your dashboard
   const token = await context.Token.get(event.params.tokenAddress);
   if (token) {
     let newSupply = token.currentSupply;
