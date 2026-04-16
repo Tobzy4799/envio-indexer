@@ -1,3 +1,14 @@
+type Token {
+  id: ID! # Token Address
+  name: String!
+  symbol: String!
+  ipfsCID: String!
+  creator: String!
+  currentSupply: BigInt!
+  reserveUSDC: BigInt!
+  tradeCount: Int!
+}
+
 type Factory_TokenCreated {
   id: ID!
   tokenAddress: String!
@@ -15,4 +26,3 @@ type Factory_Trade {
   isBuy: Boolean!
   timestamp: BigInt!
 }
-
